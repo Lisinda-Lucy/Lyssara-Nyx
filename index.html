@@ -638,17 +638,14 @@ section[id]{scroll-margin-top:80px}
   .h-media .h-whisper.h-whisper-m{left:var(--gutter);right:var(--gutter)!important}
 }
 
-/* tighter vertical rhythm: hero and Method take less height */
-.hero2{min-height:max(560px,min(86svh,48vw))!important}
-.h-copy{padding-block:clamp(92px,7.5vw,124px) clamp(36px,3.5vw,52px)!important}
-.method3 .wrap{padding-block:clamp(44px,4.5vw,72px) clamp(36px,3.8vw,56px)!important;gap:clamp(22px,2.4vw,34px)!important}
-.m3-card{aspect-ratio:1/1.1!important}
-@media (max-width:760px){
-  .h-copy{padding-block:24px 48px!important}
-  .method3 .wrap{padding-block:44px 48px!important}
-}
-
 .m3-label{font-size:clamp(13px,1.2vw,20px)!important;letter-spacing:.04em!important}
+
+/* hero shows the whole artwork: height follows the image's own 16:9 shape */
+@media (min-width:761px){
+  .hero2{min-height:0!important;height:auto;aspect-ratio:2400/1352;max-height:none}
+  .h-img{object-position:50% 50%}
+}
+@media (min-width:761px) and (max-width:1100px){.hero2{aspect-ratio:auto;min-height:620px!important}.h-img{object-position:62% 30%}}
 </style>
 <style>html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
