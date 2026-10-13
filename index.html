@@ -1093,6 +1093,11 @@ section[id]{scroll-margin-top:80px}
 }
 .m3-quote{margin-top:calc(-1 * clamp(18px,2.2vw,32px))!important}
 @media (max-width:760px){.intro-on .intro{background:#fff}}
+/* Every button on the site matches the "Join the Journey" button in the navigation */
+.pill.pill.pill{padding:10px 22px!important;font-size:16px!important;line-height:1.25!important;height:auto!important;min-height:0!important}
+@media (max-width:760px){.pill.pill.pill{padding:9px 16px!important;font-size:15px!important}}
+.ct-send{justify-self:start!important}
+@media (min-width:1101px){.ap-product .ap-copy .pill{margin-top:-2px!important}}
 </style>
 <style>html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
@@ -1354,9 +1359,9 @@ function fit(){
   const lbody=lc.querySelector('.ap-body'), lb=(lbody?lbody.getBoundingClientRect().bottom-top:lbBtn)+24, rb=rc.getBoundingClientRect().bottom-top+10;
   /* the phone sits right of the button, so it only has to clear the body copy */
   const bgH=W/AR;
-  let H=Math.max(VIS*bgH, lb+(VIS-PH.top)*bgH, rb+(VIS-BX.top)*bgH);
-  s.style.height=Math.ceil(H)+'px';
   const UP=.026*bgH; /* lift the scene slightly without changing the section height */
+  let H=Math.max(VIS*bgH, lb+(VIS-PH.top)*bgH, rb+8+(VIS-BX.top)*bgH+UP);
+  s.style.height=Math.ceil(H)+'px';
   s.style.setProperty('--apcrop',(-(1-VIS)*bgH+UP)+'px');
   const st=H-VIS*bgH-UP;
   const edge=lc.getBoundingClientRect().left-s.getBoundingClientRect().left;
