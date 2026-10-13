@@ -953,12 +953,44 @@ section[id]{scroll-margin-top:80px}
   .foot .foot-links,.foot-tag,.foot-social{justify-self:center}
   .foot-base{justify-content:center;text-align:center;flex-direction:column;align-items:center}
 }
+/* ---------- Opening film (her GIF, untouched, at its own speed) ---------- */
+.intro{display:none}
+.intro-on,.intro-on body{overflow:hidden!important}
+.intro-on .intro{display:block;position:fixed;inset:0;z-index:1000;overflow:hidden;background:#b6aea4;
+  transition:transform 1.2s cubic-bezier(.7,0,.3,1),opacity .5s ease .7s}
+.intro img{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);max-width:none;height:auto;
+  width:max(100vw,min(177.78vh,219vw))}
+.intro.intro-out{transform:translateY(-100%);opacity:0}
+@media (prefers-reduced-motion:reduce){.intro-on .intro{transition:opacity .6s ease}.intro.intro-out{transform:none}}
 </style>
 <style>html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
 <body>
 
 
+<script>(function(){if(!location.hash){document.documentElement.classList.add('intro-on');if('scrollRestoration' in history)history.scrollRestoration='manual';}})();</script>
+<div class="intro" id="intro" aria-hidden="true"><img src="assets/img/9826973bff.gif" alt="" decoding="sync"></div>
+<script>
+(function(){
+  var root=document.documentElement,intro=document.getElementById('intro');
+  if(!root.classList.contains('intro-on')){intro.remove();return;}
+  window.scrollTo(0,0);
+  var img=intro.querySelector('img'),done=false,timer;
+  var LOOP=2300,LOOPS=9; /* 23 frames x 100ms, played 9 times = 20.7s, ends on a full loop */
+  function leave(){
+    if(done)return;done=true;clearTimeout(timer);
+    ['wheel','touchmove','keydown'].forEach(function(e){removeEventListener(e,onInput,true)});
+    window.scrollTo(0,0);
+    intro.classList.add('intro-out');
+    setTimeout(function(){root.classList.remove('intro-on');intro.remove();},1300);
+  }
+  var KEYS={' ':1,'PageDown':1,'PageUp':1,'ArrowDown':1,'ArrowUp':1,'Home':1,'End':1,'Tab':1,'Escape':1,'Enter':1,'Spacebar':1};
+  function onInput(e){if(e.type!=='keydown'||KEYS[e.key]){if(e.cancelable)e.preventDefault();leave();}}
+  ['wheel','touchmove','keydown'].forEach(function(e){addEventListener(e,onInput,{capture:true,passive:false})});
+  function start(){timer=setTimeout(leave,LOOP*LOOPS);}
+  if(img.complete)start();else{img.addEventListener('load',start);img.addEventListener('error',leave);}
+})();
+</script>
 <header class="nav">
   <div class="wrap">
     <img src="assets/img/18be73e98e.svg" alt="Lyssara Nyx">
