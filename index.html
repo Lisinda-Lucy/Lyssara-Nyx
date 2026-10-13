@@ -646,6 +646,312 @@ section[id]{scroll-margin-top:80px}
   .h-img{object-position:50% 50%}
 }
 @media (min-width:761px) and (max-width:1100px){.hero2{aspect-ratio:auto;min-height:620px!important}.h-img{object-position:62% 30%}}
+
+/* ---------- The Arlene App ---------- */
+.app2{position:relative;overflow:hidden;isolation:isolate;background:var(--beach)}
+.a2-media{position:absolute;inset:0;z-index:-1}
+.a2-img{width:100%;height:100%;object-fit:cover;object-position:50% 50%;max-width:none;display:block}
+.a2-wrap{position:relative;display:flex;align-items:center;min-height:max(560px,calc(100vw / 2.2))}
+.a2-copy{width:min(560px,40%);display:grid;gap:clamp(12px,1.2vw,20px);justify-items:start;padding-block:clamp(48px,5vw,80px)}
+.a2-copy h2{font-size:clamp(48px,5.4vw,96px);line-height:.9}
+.a2-sub{font-size:clamp(17px,1.5vw,24px);line-height:1.5}
+.a2-copy .pill{margin-top:6px}
+.a2-icons{grid-template-columns:repeat(4,minmax(0,1fr))!important;width:min(460px,100%)!important;margin-top:clamp(8px,1vw,16px)}
+.a2-icons span{white-space:nowrap}
+@media (max-width:1100px){.a2-copy{width:min(480px,46%)}}
+@media (max-width:760px){
+  .app2{display:grid}
+  .a2-media{position:relative;inset:auto;aspect-ratio:1/0.95}
+  .a2-img{object-position:90% 50%}
+  .a2-wrap{min-height:0;display:block}
+  .app2::before{content:"";position:absolute;inset:auto 0 0 0;top:calc(100vw * .95 - 40px);z-index:-1;pointer-events:none;
+    background:var(--app-src) 0% 100%/auto 140% no-repeat;opacity:.55;filter:blur(1.5px)}
+  .app2::after{content:"";position:absolute;inset:auto 0 0 0;top:calc(100vw * .95 - 40px);z-index:-1;pointer-events:none;
+    background:linear-gradient(180deg,var(--beach) 0%,rgba(246,233,218,.82) 16%,rgba(246,233,218,.7) 60%,rgba(246,233,218,.55) 100%)}
+  .a2-copy{width:auto;padding-block:28px 56px;gap:0}
+  .a2-copy .m3-label{margin-bottom:12px}
+  .a2-copy h2{font-size:48px;margin-bottom:16px}
+  .a2-sub{font-size:18px;line-height:1.6;margin-bottom:28px}
+  .a2-copy .pill{margin:0 0 34px}
+  .a2-icons{width:100%!important}
+  .a2-icons span{white-space:normal}
+}
+
+@media (min-width:761px){
+  .app2::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+    background:radial-gradient(48% 82% at 18% 55%,rgba(246,233,218,.92) 0%,rgba(246,233,218,.72) 45%,rgba(246,233,218,0) 78%)}
+}
+
+
+/* App heading matches the Method heading exactly */
+.a2-copy h2{font-size:clamp(52px,6.2vw,104px)!important;line-height:.9}
+@media (min-width:761px){.a2-copy{width:auto!important;max-width:min(760px,60%)}.a2-sub{max-width:min(42ch,100%);text-wrap:pretty}}
+@media (max-width:760px){.a2-copy h2{font-size:50px!important}}
+
+/* ================= SITE TYPE SCALE (matches "Honor your cyclical nature") =================
+   label: small caps line above each heading
+   h2:    section heading
+   body:  intro copy under each heading, and button text */
+:root{--t-label:clamp(13px,1.2vw,20px);--t-h2:clamp(52px,6.2vw,104px);--t-body:clamp(18px,1.75vw,28px)}
+.m3-label,.sec-head > .label,.product-copy > .label,.app-copy > .label,.mission .wrap > .label,.a2-copy > .m3-label{
+  font-family:var(--f-body)!important;font-size:var(--t-label)!important;letter-spacing:.04em!important;text-transform:uppercase;color:var(--kiss)!important}
+#method-h,#app-h,.sec-head h2,.product-copy h2,.app-copy h2,.mission h2{font-family:var(--f-head)!important;font-size:var(--t-h2)!important;line-height:.9!important;letter-spacing:-.016em}
+.m3-intro,.a2-sub,.h-copy .lede,.sec-head .sub,.gather-intro,.product-copy .lede,.offers .intro{font-family:var(--f-body)!important;font-size:var(--t-body)!important;line-height:1.45!important}
+.h-copy .pill,.a2-copy .pill,.product-copy .pill,.gather .pill,.door .pill,.book-wrap .pill,.mission .pill{font-size:clamp(17px,1.5vw,24px)!important}
+@media (max-width:760px){
+  :root{--t-h2:50px;--t-body:18px;--t-label:13px}
+}
+
+@media (min-width:761px){
+  .a2-wrap{min-height:max(520px,calc(100vw / 2.65))!important}
+  .a2-img{object-position:50% 68%!important}
+}
+
+/* ---------- The Arlene App + Arlene Cycle Support (one section, two columns) ---------- */
+.ap{position:relative;overflow:hidden;isolation:isolate;background:var(--beach)}
+.ap-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 100%;max-width:none;z-index:-2}
+.ap-div{position:absolute;z-index:-1;left:50%;top:7%;height:60%;width:auto;max-width:none;transform:translateX(-50%);pointer-events:none}
+.ap-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:clamp(90px,10vw,150px);min-height:56.25vw;
+  padding-block:clamp(48px,5vw,80px) 6.2vw!important}
+.ap-col{display:grid;grid-template-rows:auto 1fr;min-width:0}
+.ap-copy{display:grid;gap:clamp(12px,1.2vw,20px);justify-items:start;align-content:start}
+.ap-copy h2{white-space:nowrap}
+.ap-product .ap-copy h2{white-space:normal;max-width:9.5em}
+.ap-body{font-family:var(--f-body);font-size:var(--t-body);line-height:1.45;max-width:30ch;margin:0}
+.ap-copy .pill{font-size:clamp(17px,1.5vw,24px)!important;margin-top:6px}
+.ap-cta-r{justify-self:end}
+.ap-scene{display:flex;align-items:flex-end;min-height:0;padding-top:clamp(16px,2vw,32px)}
+.ap-scene-app{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:stretch;column-gap:clamp(10px,1.2vw,20px)}
+.ap-phone{width:clamp(170px,15.5vw,300px);height:auto;align-self:end;filter:drop-shadow(0 26px 22px rgba(107,60,30,.28))}
+.ap-icons{list-style:none;margin:0;padding:0;display:grid;gap:clamp(18px,2vw,32px);align-content:start}
+.ap-icons-b{align-self:end;padding-bottom:12%}
+.ap-icons li{display:flex;align-items:center;gap:clamp(10px,1vw,16px)}
+.ap-icons img{height:clamp(34px,3.2vw,56px);width:auto;filter:drop-shadow(0 0 8px rgba(246,233,218,.95))}
+.ap-icons span{font-family:var(--f-body);font-size:clamp(12px,1.05vw,17px);letter-spacing:.03em;text-transform:uppercase;line-height:1.3}
+.ap-scene-product{justify-content:flex-end}
+.ap-box{width:min(100%,clamp(380px,38vw,720px));height:auto;filter:drop-shadow(0 26px 22px rgba(107,60,30,.25))}
+@media (max-width:1100px){
+  .ap{background:none}
+  .ap-bg,.ap-div{display:none}
+  .ap-grid{grid-template-columns:1fr;min-height:0;padding:0!important;max-width:none!important}
+  .ap-col{position:relative;isolation:isolate;padding:56px var(--gutter) 40px;background:var(--beach) var(--ap-src) 30% 100%/cover no-repeat}
+  .ap-product{background-position:85% 100%}
+  .ap-copy h2{white-space:normal}
+  .ap-cta-r{justify-self:start}
+  .ap-scene{padding-top:28px}
+  .ap-phone{width:min(240px,46vw)}
+  .ap-box{width:min(560px,100%)}
+  .ap-scene-product{justify-content:center}
+}
+@media (max-width:760px){
+  .ap-col{padding:48px var(--gutter) 32px}
+  .ap-scene-app{grid-template-columns:1fr 1fr;row-gap:22px}
+  .ap-scene-app .ap-phone{grid-column:1/-1;grid-row:1;justify-self:center}
+  .ap-icons-a{grid-row:2}.ap-icons-b{grid-row:2;align-self:start;padding-bottom:0}
+  .ap-icons img{height:36px}.ap-icons span{font-size:12px}
+}
+
+.ap-copy h2{font-family:var(--f-head)!important;font-size:var(--t-h2)!important;line-height:.9!important}
+.ap-product .ap-copy h2{max-width:none}
+.ap-body{max-width:none}
+.ap-phone{width:clamp(190px,18vw,350px)}
+.ap-icons span{white-space:nowrap}
+@media (max-width:760px){.ap-scene-app .ap-phone{width:62vw}.ap-icons span{white-space:normal}}
+
+/* App + Product refinements */
+.ap-phone{width:clamp(220px,21vw,410px)!important}
+.ap-scene-app{column-gap:clamp(4px,.6vw,10px)!important}
+.ap-icons-b{padding-bottom:40%!important;margin-left:clamp(-40px,-2.4vw,-14px)}
+.ap-box{width:min(100%,clamp(320px,31vw,600px))!important}
+.ap-scene-product{justify-content:center!important;padding-left:4%}
+@media (max-width:1100px){.ap-icons-b{margin-left:0;padding-bottom:20%!important}.ap-scene-product{padding-left:0}}
+@media (max-width:760px){.ap-scene-app .ap-phone{width:72vw!important}.ap-icons-b{padding-bottom:0!important}.ap-box{width:100%!important}}
+
+/* ===== App + Product v2: products are part of the background artwork ===== */
+.ap{position:relative;overflow:hidden;isolation:isolate;background:var(--beach);min-height:56.25vw}
+.ap-stage{position:absolute;left:0;right:0;bottom:0;width:100%;aspect-ratio:2182/1225;z-index:-2;-webkit-mask:linear-gradient(180deg,transparent 0,#000 9%);mask:linear-gradient(180deg,transparent 0,#000 9%)}
+.ap{background:#f5ead9}
+.ap-stage .ap-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 100%;z-index:auto}
+.ap-grid{min-height:0!important;padding-block:clamp(48px,5vw,80px) 0!important;align-items:start}
+.ap-col{grid-template-rows:auto!important}
+.ap-scene{display:none!important}
+.ap-phone,.ap-box{display:none}
+.ap .ap-icons{position:absolute;z-index:1;margin:0}
+.ap-icons-a{top:var(--ia-top,60%);gap:clamp(16px,1.8vw,28px)!important;padding:0!important}
+.ap-icons-a li{flex-direction:row;align-items:center;text-align:left;gap:clamp(10px,1vw,16px)!important}
+.ap-icons-b{left:var(--ib-left,40%);top:var(--ib-top,64%);padding:0!important;margin:0!important}
+.ap-icons span{white-space:nowrap}
+.ap-icons-a span{white-space:nowrap}
+@media (max-width:1100px){
+  .ap{min-height:0;height:auto!important}
+  .ap-stage,.ap-div{display:none}
+  .ap-scene{display:block!important;aspect-ratio:1/1.05;margin-top:24px;border-radius:2px;background:var(--ap-src) no-repeat;background-size:auto 100%}
+  .ap-scene-app{background-position:6% 100%}
+  .ap-scene-product{background-position:100% 100%}
+  .ap .ap-icons{position:static;display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:0 var(--gutter)!important;background:var(--beach)}
+  .ap-icons-a{order:0}
+  .ap-icons-a li{flex-direction:row;text-align:left}
+  .ap{display:flex;flex-direction:column}
+  .ap-grid{display:contents!important}
+  .ap-app{order:1}.ap-icons-a{order:2;padding-top:20px!important}.ap-icons-b{order:3;padding-block:14px 40px!important}.ap-product{order:4}
+}
+
+@media (min-width:1101px){
+  .ap-icons-a{isolation:isolate}
+  .ap-icons-a::before{content:"";position:absolute;inset:-30px -40px;z-index:-1;border-radius:50%;
+    background:radial-gradient(closest-side,rgba(246,233,218,.92),rgba(246,233,218,.7) 55%,rgba(246,233,218,0))}
+}
+
+@media (max-width:1100px){
+  .ap-col{background:linear-gradient(180deg,#f5ead9,var(--beach))!important;padding-bottom:0!important}
+  .ap-scene{margin-inline:calc(-1 * var(--gutter));aspect-ratio:1/1!important}
+  .ap-product{padding-bottom:0!important}
+  .ap-icons-b{padding-bottom:28px!important}
+}
+
+@media (max-width:1100px){
+  .ap-scene{aspect-ratio:16/11!important}
+  .ap-scene-app{background-size:auto 160%!important;background-position:6% 80%!important}
+  .ap-scene-product{background-size:auto 160%!important;background-position:100% 80%!important}
+}
+@media (max-width:760px){
+  .ap-scene-app{aspect-ratio:1/1!important;background-size:auto 133%!important;background-position:13% 73%!important}
+  .ap-scene-product{aspect-ratio:4/3!important;background-size:auto 172%!important;background-position:93% 78%!important}
+}
+
+@media (min-width:1101px){.ap-icons-b span{white-space:normal}}
+
+@media (min-width:1101px){.ap-icons-a li{gap:clamp(8px,.8vw,12px)!important}.ap-icons-a span{letter-spacing:.02em}}
+
+.ap-cta-r{justify-self:start!important}
+
+/* ---------- The Books ---------- */
+.bk{position:relative;overflow:hidden;isolation:isolate;background:var(--beach);min-height:calc(100vw * 894 / 2182)}
+.bk-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:75% 100%;max-width:none;z-index:-2}
+.bk::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(42% 78% at 18% 48%,rgba(246,233,218,.9) 0%,rgba(246,233,218,.68) 50%,rgba(246,233,218,0) 82%)}
+.bk-wrap{display:flex;align-items:center;min-height:inherit;padding-block:clamp(56px,6vw,96px)}
+.bk-copy{width:min(560px,38%);display:grid;gap:clamp(12px,1.2vw,20px);justify-items:start}
+.bk-copy h2{font-family:var(--f-head)!important;font-size:var(--t-h2)!important;line-height:.9!important}
+.bk-body{font-family:var(--f-body);font-size:var(--t-body);line-height:1.45;margin:0}
+.bk-copy .pill{font-size:clamp(17px,1.5vw,24px)!important;margin-top:6px}
+.bk-note{font-family:var(--f-script);font-size:clamp(28px,2.6vw,46px);line-height:1.15;color:var(--kiss);margin:clamp(6px,1vw,14px) 0 0;
+  justify-self:end;margin-right:clamp(4px,1.6vw,30px);transform:rotate(-6deg);transform-origin:left center;text-shadow:0 0 14px rgba(246,233,218,.95)}
+@media (max-width:1100px){.bk-copy{width:min(480px,42%)}.bk::after{background:radial-gradient(55% 85% at 22% 50%,rgba(246,233,218,.94),rgba(246,233,218,.7) 55%,rgba(246,233,218,0) 85%)}}
+@media (max-width:760px){
+  .bk{min-height:0;display:grid}
+  .bk-bg{position:relative;inset:auto;height:auto;aspect-ratio:4/3.2;object-position:72% 100%}
+  .bk::after{display:none}
+  .bk-wrap{min-height:0;display:block;padding-block:36px 56px;background:linear-gradient(180deg,#f2e3cd,var(--beach) 60%)}
+  .bk-copy{width:auto}
+  .bk-note{font-size:34px;justify-self:end;margin-right:8px}
+}
+
+/* ---------- Gatherings & Experiences ---------- */
+.gt{position:relative;overflow:hidden;background:#f3d6bb url(assets/img/c0463c2c26.jpg) center/cover no-repeat}
+.gt-wrap{padding-block:clamp(48px,4.5vw,72px) clamp(56px,5vw,84px);display:grid;gap:clamp(20px,2.4vw,40px)}
+.gt-top{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(24px,3vw,56px);align-items:start}
+.gt-copy{display:grid;gap:clamp(12px,1.2vw,18px);justify-items:start}
+.gt-copy h2{font-family:var(--f-head)!important;font-size:clamp(46px,5vw,90px)!important;line-height:.95!important}
+.gt-body{font-family:var(--f-body);font-size:var(--t-body);line-height:1.45;margin:0}
+.gt-figure{position:relative;margin:0;display:grid;justify-items:center;align-self:stretch}
+.gt-figure img{width:min(100%,520px);height:auto;display:block;margin-top:calc(-1 * clamp(20px,2vw,40px))}
+.gt-figure .pill{position:relative;margin-top:calc(-1 * clamp(28px,2.6vw,44px));font-size:clamp(17px,1.5vw,24px)!important}
+.gt-invite{font-family:var(--f-script);font-size:clamp(34px,4vw,72px);line-height:1.1;color:var(--kiss);text-align:center;margin:0;transform:rotate(-2deg)}
+.gt-cols{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:clamp(16px,2.4vw,44px);align-items:stretch}
+.gt-cols article{display:grid;gap:clamp(10px,1vw,16px);justify-items:center;align-content:start;text-align:center}
+.gt-cols h3{font-family:var(--f-body);font-weight:400;font-size:clamp(20px,1.9vw,30px);letter-spacing:.02em;text-transform:uppercase;line-height:1.1}
+.gt-cols p{font-family:var(--f-body);font-size:clamp(17px,1.5vw,23px);line-height:1.45;max-width:24ch;margin:0}
+.gt-sep{height:clamp(170px,16vw,280px);width:auto;align-self:center}
+.gt-sep-h{display:none}
+@media (max-width:980px){
+  .gt-top{grid-template-columns:1fr}
+  .gt-figure{order:-1}
+  .gt-figure img{width:min(80%,420px);margin-top:0}
+  .gt-cols{grid-template-columns:1fr;gap:28px}
+  .gt-sep{display:none}
+  .gt-sep-h{display:block!important;width:min(260px,70%);height:auto;margin:0 auto}
+}
+@media (max-width:760px){.gt-copy h2{font-size:44px!important}.gt-invite{font-size:36px}}
+
+.gt-wrap{gap:clamp(14px,1.6vw,26px)!important}
+.gt-invite{margin-top:clamp(6px,1vw,16px)!important;line-height:1.05!important;text-align:left!important;justify-self:center;font-size:clamp(32px,3.3vw,60px)!important}
+.gt-figure .pill{padding-inline:clamp(40px,4.4vw,76px)!important;padding-block:clamp(8px,.7vw,12px)!important;align-self:start;height:auto;line-height:1.3}
+@media (max-width:980px){.gt-invite{margin-top:0!important}}
+
+.gt-invite span{display:block}
+.gt-invite .gt-inv2{margin-left:4.6em;margin-top:-.32em;white-space:nowrap}
+@media (max-width:760px){.gt-invite .gt-inv2{margin-left:3.6em}}
+/* ---------- Contact ---------- */
+.ct{position:relative;overflow:hidden;background:#f4ece5 url(assets/img/57176bbacb.jpg) center/cover no-repeat}
+.ct-wrap{min-height:calc(min(100vw,2400px) * 883 / 2182);box-sizing:border-box;padding-block:clamp(56px,5.5vw,96px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,96px);align-items:center}
+.ct-copy{display:grid;gap:clamp(12px,1.2vw,18px);justify-items:start}
+.ct-copy h2{font-family:var(--f-head);font-size:var(--t-h2);line-height:.92;color:var(--kiss)}
+.ct-body{font-family:var(--f-body);font-size:var(--t-body);line-height:1.45;margin:0;max-width:34ch}
+.ct-invite{font-family:var(--f-script);font-size:clamp(32px,3.3vw,60px);line-height:1.05;color:var(--kiss);margin:clamp(4px,.8vw,12px) 0 0;transform:rotate(-2deg)}
+.ct-form{display:grid;gap:clamp(14px,1.3vw,20px)}
+.ct-row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.3vw,20px)}
+.ct-field{display:grid;gap:6px;font-family:var(--f-body);color:var(--kiss)}
+.ct-field > span{font-size:clamp(13px,1vw,16px);letter-spacing:.04em;text-transform:uppercase}
+.ct-field i{font-style:normal;color:var(--sand)}
+.ct-field input,.ct-field select,.ct-field textarea{font-family:var(--f-body);font-size:clamp(17px,1.3vw,20px);color:var(--kiss);background:rgba(246,233,218,.82);border:1px solid rgba(186,127,99,.55);border-radius:0;padding:12px 16px;width:100%;box-sizing:border-box;-webkit-appearance:none;appearance:none}
+.ct-field select{background-image:linear-gradient(45deg,transparent 50%,var(--kiss) 50%),linear-gradient(135deg,var(--kiss) 50%,transparent 50%);background-position:calc(100% - 22px) 52%,calc(100% - 16px) 52%;background-size:6px 6px;background-repeat:no-repeat;padding-right:44px;cursor:pointer}
+.ct-field textarea{resize:vertical;min-height:120px}
+.ct-field input:focus-visible,.ct-field select:focus-visible,.ct-field textarea:focus-visible{outline:2px solid var(--kiss);outline-offset:2px}
+.ct-send{justify-self:start;border:0;cursor:pointer;font-family:var(--f-body);font-size:clamp(17px,1.5vw,24px)!important;padding-inline:clamp(40px,4.4vw,76px)!important;padding-block:clamp(8px,.7vw,12px)!important;line-height:1.3}
+.ct-send:disabled{opacity:.6;cursor:wait}
+.ct-status{font-family:var(--f-body);font-size:clamp(16px,1.2vw,19px);color:var(--kiss);margin:0;min-height:1em}
+@media (max-width:980px){
+  .ct-wrap{grid-template-columns:1fr;min-height:0}
+  .ct-body{max-width:none}
+}
+@media (max-width:520px){.ct-row{grid-template-columns:1fr}.ct-send{justify-self:stretch;justify-content:center}}
+/* ---------- Footer: same white glass as the nav ---------- */
+.foot{background:rgba(255,255,255,.88);-webkit-backdrop-filter:blur(14px) saturate(1.15);backdrop-filter:blur(14px) saturate(1.15);border-top:1px solid rgba(255,255,255,.7);box-shadow:0 -8px 30px -18px rgba(107,2,2,.35)}
+.foot .foot-wrap{display:grid;grid-template-columns:auto auto auto 1fr;align-items:center;column-gap:clamp(32px,5vw,96px);row-gap:28px;padding-block:clamp(32px,3vw,48px)}
+.foot-logo{width:200px;height:auto;display:block}
+.foot .foot-links{display:flex;flex-wrap:nowrap;gap:clamp(40px,5vw,88px)}
+.foot-links ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.foot-links a{text-decoration:none;font-family:var(--f-body);font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--kiss);-webkit-text-stroke:.35px currentColor}
+.foot-links a:hover,.foot-social a:hover{color:var(--sand)}
+.foot-social{display:flex;gap:18px}
+.foot-social a{color:var(--kiss);display:inline-flex}
+.foot-social svg{width:24px;height:24px;fill:currentColor;display:block}
+.foot-social a:focus-visible,.foot-links a:focus-visible{outline:2px solid var(--kiss);outline-offset:4px}
+.foot-tag{justify-self:end;font-family:var(--f-body);font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--kiss);white-space:nowrap}
+@media (max-width:980px){
+  .foot .foot-wrap{grid-template-columns:auto 1fr}
+  .foot-links{justify-self:end}
+  .foot-tag{justify-self:end}
+}
+@media (max-width:560px){
+  .foot .foot-wrap{grid-template-columns:1fr;justify-items:center;text-align:center}
+  .foot-links{justify-self:center}
+  .foot-links ul{justify-items:start;text-align:left}
+  .foot-tag{justify-self:center}
+}
+/* gatherings CTA under the three offers; footer layout v2 */
+.gt-cols h3{font-weight:700!important;font-size:clamp(23px,2.2vw,35px)!important;-webkit-text-stroke:.5px currentColor}
+.gt-cta{justify-self:center;font-size:clamp(17px,1.5vw,24px)!important;padding-inline:clamp(40px,4.4vw,76px)!important;padding-block:clamp(8px,.7vw,12px)!important;line-height:1.3;margin-top:clamp(4px,.6vw,10px)}
+.gt-figure img{margin-bottom:0}
+.foot .foot-wrap{grid-template-columns:auto 1fr auto auto!important;align-items:center;column-gap:clamp(32px,5vw,96px)}
+.foot-brand{display:grid;gap:6px;justify-items:start}
+.foot-script{font-family:var(--f-script);font-size:clamp(26px,2.2vw,34px);line-height:1;color:var(--kiss);margin:0}
+.foot .foot-links{justify-self:center}
+.foot-tag{justify-self:end}
+.foot-social{justify-self:end}
+.foot-base{grid-column:1/-1;display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;padding-top:18px;border-top:1px solid rgba(186,127,99,.3);font-family:var(--f-body);font-size:13px;letter-spacing:.06em;color:var(--kiss)}
+@media (max-width:1100px){
+  .foot .foot-wrap{grid-template-columns:auto 1fr!important}
+  .foot .foot-links{justify-self:end}
+  .foot-tag{justify-self:start}
+}
+@media (max-width:560px){
+  .foot .foot-wrap{grid-template-columns:1fr!important;justify-items:center}
+  .foot-brand{justify-items:center}
+  .foot .foot-links,.foot-tag,.foot-social{justify-self:center}
+  .foot-base{justify-content:center;text-align:center;flex-direction:column;align-items:center}
+}
 </style>
 <style>html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
@@ -664,7 +970,7 @@ section[id]{scroll-margin-top:80px}
       <li><a href="#connect">Connect</a></li>
     </ul>
     <div class="nav-actions">
-      <a class="pill solid" href="#join" style="padding:10px 22px;font-size:16px">Join the Journey</a>
+      <a class="pill solid" href="#connect" style="padding:10px 22px;font-size:16px">Join the Journey</a>
       <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu-panel"><span class="bars" aria-hidden="true"></span><span class="sr">Menu</span></button>
     </div>
   </div>
@@ -685,7 +991,7 @@ section[id]{scroll-margin-top:80px}
     <h1 id="hero-h" class="h-logo"><img src="assets/img/18be73e98e.svg" alt="Lyssara Nyx"></h1>
     <p class="h-sub">The Love Affair Igniter</p>
     <p class="lede">Exploring what becomes possible when women return to the wisdom of their bodies, their natural rhythm, and themselves.</p>
-    <a class="pill solid" href="#method">Explore The Universe</a>
+    <a class="pill solid" href="#gatherings">Explore The Universe</a>
     <ul class="pillars-row" aria-label="What the journey brings">
       <li><img src="assets/img/18662da7cc.png" alt=""><span>Mind<br>Clarity</span></li>
       <li><img src="assets/img/37cda91e8a.png" alt=""><span>Body<br>Vitality</span></li>
@@ -724,219 +1030,139 @@ section[id]{scroll-margin-top:80px}
   </div>
 </section>
 
-<section class="name tex" id="name" aria-labelledby="name-h">
-  <img class="el" src="assets/img/9ff1028fa5.webp" alt="" style="width:820px;left:50%;top:52%;transform:translate(-50%,-50%);opacity:.2">
-  <img class="el" src="assets/img/1e9756d4bf.webp" alt="" style="width:300px;right:0;top:0;opacity:.45">
-  <img class="leaf" src="assets/img/e1aa7aae6c.webp" alt="" style="width:860px;left:-360px;top:-150px;opacity:.7;transform:scaleY(-1) rotate(-20deg)">
-  <img class="leaf" src="assets/img/268db3a5e3.webp" alt="" style="width:900px;right:-420px;bottom:-200px;opacity:.4;transform:scaleX(-1)">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="label">The story of her name</span>
-      <h2 id="name-h">Instinct embodied</h2>
-    </div>
-    <div class="names">
-      <article>
-        <h3>Lyssara</h3>
-        <span class="meaning">From Lyssa &middot; ecstatic feminine force</span>
-        <p>Derived from Lyssa, representing ecstatic feminine force, instinct, and liberation. Lyssara carries embodied wisdom, intuition over intellect, emotional truth without apology, and healer energy that works through presence and resonance. It is not chaos. It is wild intelligence.</p>
-        <p>Lyssara feels like the woman who trusts her knowing. The one who listens beneath words. The healer who does not chase, she attracts.</p>
-      </article>
-      <article>
-        <h3>Nyx</h3>
-        <span class="meaning">Primordial goddess of Night</span>
-        <p>Nyx is the primordial goddess of Night, the original womb of creation. She carries deep intuition, sovereignty, protection, and the stillness before becoming. Nyx energy is ancient authority without force.</p>
-      </article>
-    </div>
-    <p class="vow">I am Lyssara Nyx. Instinct embodied, mystery remembered, medicine restored.</p>
-  </div>
-</section>
 
-<section class="app tex" id="app" aria-labelledby="app-h">
-  <div class="sunbloom" aria-hidden="true" style="right:auto;left:-15%;top:-20%"></div>
-  <img class="leaf" src="assets/img/f16caaee31.webp" alt="" style="width:760px;right:-280px;top:-220px;opacity:.8;transform:scale(-1,-1) rotate(-8deg)">
-  <img class="el" src="assets/img/f4e7217a33.webp" alt="" style="width:620px;left:4%;top:50%;transform:translateY(-50%);opacity:.22">
-  <div class="wrap">
-    <div class="phone-stage">
-      <div class="phone" role="img" aria-label="The app on a phone">
-        <div class="screen">
-          <img src="assets/img/89db751e9d.webp" alt="" class="screen-glyph">
-          <span class="screen-name">Arlene</span>
-          <span class="screen-sub">Day 14 &middot; Follicular</span>
-          <div class="screen-ring"><span>Tune in</span></div>
-        </div>
+
+<section class="ap" id="app" aria-label="The Arlene App and Arlene Cycle Support">
+  <div class="ap-stage"><img class="ap-bg" src="assets/img/eafea37945.jpg" alt="The Arlene app on a phone and the Arlene Cycle Support box, each on a stone plinth in a sunlit jungle"></div>
+  <img class="ap-div" src="assets/img/cf947440fb.webp" alt="">
+  <div class="wrap ap-grid">
+    <div class="ap-col ap-app">
+      <div class="ap-copy">
+        <span class="m3-label">The Arlene App</span>
+        <h2 id="app-h">A guide for real change</h2>
+        <p class="ap-body">A guided journey to help you tune into where you are, understand what you need, and support yourself as you shift. We are moving beyond the box.</p>
+        <a class="pill solid" href="https://arlene-cycle.lovable.app/" target="_blank" rel="noopener">Explore the App</a>
       </div>
+      <div class="ap-scene ap-scene-app" aria-hidden="true"></div>
     </div>
-    <div class="app-copy">
-      <span class="label">The App</span>
-      <h2 id="app-h">A guide for real change</h2>
-      <p class="lede">A guided journey to help you tune into where you are, understand what you need, and support yourself as you shift.</p>
-      <ul class="features">
-        <li><img src="assets/img/a8d2ecb95a.webp" alt="">Awareness</li>
-        <li><img src="assets/img/7dc1963806.webp" alt="">Guided practices</li>
-        <li><img src="assets/img/1899a8d88b.webp" alt="">Real support</li>
-        <li><img src="assets/img/89db751e9d.webp" alt="">Mind, body, soul</li>
-      </ul>
-      <a class="pill solid" href="#join">Explore the app</a>
-    </div>
-  </div>
-</section>
-
-<section class="product tex" id="product" aria-labelledby="product-h">
-  <div class="bokeh" aria-hidden="true" style="transform:scaleX(-1)"></div>
-  <img class="leaf" src="assets/img/e1aa7aae6c.webp" alt="" style="width:860px;left:-360px;bottom:-280px;opacity:.65">
-  <img class="leaf" src="assets/img/b53f9c0675.webp" alt="" style="width:900px;right:-380px;top:-260px;opacity:.6;transform:scale(-1,-1)">
-  <div class="wrap">
-    <div class="product-copy">
-      <span class="label">Product</span>
-      <h2 id="product-h">Arlene Cycle Support</h2>
-      <p class="lede">The mineral supplement system that supports women through every phase of their cycle.</p>
-      <p>Arlene is the physical foundation that supports the inner journey Lyssara leads. Where Arlene is the healing journey, Lyssara Nyx is the woman who arrives.</p>
-      <a class="pill solid" href="#join">Discover Arlene</a>
-    </div>
-    <div class="plinth-stage" aria-hidden="true">
-      <div class="halo"></div>
-      <img class="halo-el" src="assets/img/f4e7217a33.webp" alt="">
-      <div class="plinth"><span>Arlene</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="books tex" id="books" aria-labelledby="books-h">
-  <img class="leaf" src="assets/img/e1aa7aae6c.webp" alt="" style="width:900px;right:-380px;top:-260px;opacity:.65;transform:scale(-1,-1) rotate(-10deg)">
-  <img class="leaf" src="assets/img/f16caaee31.webp" alt="" style="width:700px;left:-280px;bottom:-280px;opacity:.75">
-  <img class="el" src="assets/img/9ea1f52118.webp" alt="" style="width:520px;left:50%;top:52%;transform:translate(-50%,-50%);opacity:.18">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="label">Books</span>
-      <h2 id="books-h">Written teachings</h2>
-    </div>
-    <div class="shelf">
-      <article class="book-wrap">
-        <div class="book" role="img" aria-label="The Intentional Woman by Lyssara Nyx">
-          <div class="face front cover-a">
-            <img src="assets/img/f4e7217a33.webp" alt="" class="cover-el">
-            <span class="cover-title"><span>The</span><span>Intentional</span><span>Woman</span></span>
-            <span class="cover-author">Lyssara Nyx</span>
-          </div>
-          <div class="face spine spine-a"><span>The Intentional Woman</span></div>
-          <div class="face pages"></div>
-          <div class="face top"></div>
-          <div class="face back cover-a"></div>
-        </div>
-        <div class="book-shadow"></div>
-        <h3>The Intentional Woman</h3>
-        <a class="pill" href="#join">Explore the book</a>
-      </article>
-      <article class="book-wrap">
-        <div class="book" role="img" aria-label="Love Redefined by Lyssara Nyx">
-          <div class="face front cover-b">
-            <img src="assets/img/9ea1f52118.webp" alt="" class="cover-el">
-            <span class="cover-title"><span>Love</span><span>Redefined</span></span>
-            <span class="cover-author">Lyssara Nyx</span>
-          </div>
-          <div class="face spine spine-b"><span>Love Redefined</span></div>
-          <div class="face pages"></div>
-          <div class="face top"></div>
-          <div class="face back cover-b"></div>
-        </div>
-        <div class="book-shadow"></div>
-        <h3>Love Redefined</h3>
-        <a class="pill" href="#join">Explore the book</a>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="gather tex" id="gatherings" aria-labelledby="gather-h">
-  <div class="sunbloom" aria-hidden="true" style="right:20%;top:-40%"></div>
-  <div class="bokeh" aria-hidden="true"></div>
-  <img class="leaf" src="assets/img/e1aa7aae6c.webp" alt="" style="width:900px;left:-380px;top:-260px;opacity:.7;transform:scaleY(-1) rotate(-14deg)">
-  <img class="leaf" src="assets/img/e1aa7aae6c.webp" alt="" style="width:900px;right:-380px;top:-260px;opacity:.7;transform:scale(-1,-1) rotate(-14deg)">
-  <img class="el" src="assets/img/4d1205dc60.webp" alt="" style="width:380px;left:50%;bottom:-40px;transform:translateX(-50%);opacity:.22">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="label">Gatherings</span>
-      <h2 id="gather-h">Sacred Gatherings</h2>
-      <p class="sub">Group ceremonies with Lyssara</p>
-    </div>
-    <p class="gather-intro">Lyssara works with women and men to help them find their inner divinity and inner union with the divine, creating more love and coherence in the world. In ceremony, that work happens together.</p>
-    <div class="expect">
-      <div><img src="assets/img/7dc1963806.webp" alt=""><h3>The ceremony</h3><p>A held space to come back into your body and open your heart, guided by Lyssara from start to finish.</p></div>
-      <div><img src="assets/img/9ea1f52118.webp" alt=""><h3>The circle</h3><p>Women and men gathered with one intention: more love and coherence in the world.</p></div>
-      <div><img src="assets/img/4d1205dc60.webp" alt=""><h3>The ignition</h3><p>You leave lit from within. Her fire lights your fire.</p></div>
-    </div>
-    <div class="center"><a class="pill solid" href="#join">Request an invitation</a></div>
-  </div>
-</section>
-
-<section class="connect tex" id="connect" aria-labelledby="connect-h">
-  <img class="leaf" src="assets/img/b53f9c0675.webp" alt="" style="width:900px;left:-400px;bottom:-300px;opacity:.6">
-  <img class="leaf" src="assets/img/f16caaee31.webp" alt="" style="width:720px;right:-280px;top:-240px;opacity:.8;transform:scale(-1,-1)">
-  <img class="el" src="assets/img/213d33e28e.webp" alt="" style="width:300px;right:6%;bottom:40px;opacity:.2">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="label">Connect</span>
-      <h2 id="connect-h">Come closer</h2>
-    </div>
-    <div class="doors">
-      <article class="door">
-        <img src="assets/img/1899a8d88b.webp" alt="">
-        <span class="label">One on one</span>
-        <h3>Private Coaching</h3>
-        <p>Personal guidance with Lyssara to reconnect to your power, heal, expand, and step fully into your unlimited potential.</p>
-        <a class="pill solid" href="#join">Apply for coaching</a>
-      </article>
-      <article class="door">
-        <img src="assets/img/61bba93989.webp" alt="">
-        <span class="label">Speaking &amp; podcasts</span>
-        <h3>Invite Lyssara</h3>
-        <p>Bring Lyssara to your stage or show to speak on consciousness, self-love, divine union and the worldwide love affair.</p>
-        <p class="rep">Bookings through Pathos Communications</p>
-        <a class="pill solid" href="#join">Book Lyssara</a>
-      </article>
-    </div>
-    <form class="join" id="join" aria-labelledby="join-h">
-      <img src="assets/img/f4bed63f10.webp" alt="" class="join-star">
-      <h3 id="join-h">Join the Journey</h3>
-      <p>Letters from Lyssara, first word on gatherings, and early access to the books and the app.</p>
-      <div class="join-row" id="join-row">
-        <label class="sr" for="join-email">Email address</label>
-        <input id="join-email" type="email" required placeholder="Your email address" autocomplete="email">
-        <button class="pill solid" type="submit">Join the Journey</button>
+    <div class="ap-col ap-product" id="product">
+      <div class="ap-copy">
+        <span class="m3-label">Arlene Cycle Support</span>
+        <h2 id="product-h">Support your natural rhythm</h2>
+        <p class="ap-body">Arlene is a cycle-aligned nutritional support system designed for the changing needs of your mind, body and beyond.</p>
+        <a class="pill solid ap-cta-r" href="https://www.arleneforwomen.com/" target="_blank" rel="noopener">Explore Arlene</a>
       </div>
-      <p class="join-done" id="join-done" hidden>Welcome. Your journey begins in your inbox.</p>
+      <div class="ap-scene ap-scene-product" aria-hidden="true"></div>
+    </div>
+  </div>
+  <ul class="ap-icons ap-icons-a" aria-label="What the app gives you">
+    <li><img src="assets/img/18662da7cc.png" alt=""><span>Awareness</span></li>
+    <li><img src="assets/img/d1a8444b21.png" alt=""><span>Mind, Body, Soul</span></li>
+  </ul>
+  <ul class="ap-icons ap-icons-b">
+    <li><img src="assets/img/37cda91e8a.png" alt=""><span>Guided Practices</span></li>
+    <li><img src="assets/img/c92c5d3f38.png" alt=""><span>Real Support</span></li>
+  </ul>
+</section>
+
+
+
+<section class="bk" id="books" aria-labelledby="books-h">
+  <img class="bk-bg" src="assets/img/f0044c90a5.jpg" alt="The Intentional Woman and a companion book standing on stone steps in a sunlit jungle">
+  <div class="wrap bk-wrap">
+    <div class="bk-copy">
+      <span class="m3-label">The Books</span>
+      <h2 id="books-h">One body of work</h2>
+      <p class="bk-body">Words, wisdom and ideas to help women reclaim their power.</p>
+      <a class="pill solid" role="link" aria-disabled="true">Purchase your copy</a>
+      <p class="bk-note">Formerly Melissa Jones,<br>refined by Lyssara Nyx.</p>
+    </div>
+  </div>
+</section>
+
+<section class="gt" id="gatherings" aria-labelledby="gather-h">
+  <div class="wrap gt-wrap">
+    <div class="gt-top">
+      <div class="gt-copy">
+        <span class="m3-label">Gatherings &amp; Experiences</span>
+        <h2 id="gather-h">More than words,<br>an experience that stays with you</h2>
+        <p class="gt-body">There comes a moment when understanding yourself is no longer enough. You want to feel the shift, trust what you know, and live from a place of greater awareness, freedom, and love.</p>
+        <p class="gt-body">Through intimate conversations, transformative gatherings, and thought-provoking speaking experiences, Lyssara invites you to reconnect with the wisdom already within you.</p>
+        <p class="gt-invite"><span>An invitation to experience</span><span class="gt-inv2">something different.</span></p>
+      </div>
+      <figure class="gt-figure">
+        <img src="assets/img/5a8bd66ab9.webp" alt="Lyssara Nyx in a gold sequin halter top, hair flowing">
+      </figure>
+    </div>
+    <div class="gt-cols">
+      <article><h3>Private Sessions</h3><p>For someone who wants dedicated time, personal guidance, and a space to explore their own awareness, patterns, and potential.</p></article>
+      <img class="gt-sep" src="assets/img/cf947440fb.webp" alt=""><img class="gt-sep-h" src="assets/img/05feae4c4f.webp" alt="">
+      <article><h3>Gatherings</h3><p>For people who want to experience connection, reflection, and shared transformation in a meaningful setting.</p></article>
+      <img class="gt-sep" src="assets/img/cf947440fb.webp" alt=""><img class="gt-sep-h" src="assets/img/05feae4c4f.webp" alt="">
+      <article><h3>Conversations</h3><p>For event organizers, podcast hosts, and communities looking for a perspective on consciousness, feminine wisdom, self-love, and personal evolution.</p></article>
+    </div>
+    <a class="pill solid gt-cta" href="#connect">Work with Lyssara</a>
+  </div>
+</section>
+
+<section class="ct" id="connect" aria-labelledby="ct-h">
+  <div class="wrap ct-wrap">
+    <div class="ct-copy">
+      <span class="m3-label">The journey is yours</span>
+      <h2 id="ct-h">Let&rsquo;s start a conversation</h2>
+      <p class="ct-body">Whether you&rsquo;re inviting Lyssara to speak, exploring private sessions, asking about gatherings, or simply reaching out, this is where the conversation begins.</p>
+      <p class="ct-invite">An invitation to connect.</p>
+    </div>
+    <form class="ct-form" id="join" action="https://formspree.io/f/xkjoqnyl" method="POST" aria-labelledby="ct-h">
+      <div class="ct-row">
+        <label class="ct-field"><span>First name <i aria-hidden="true">*</i></span><input type="text" name="first_name" required autocomplete="given-name"></label>
+        <label class="ct-field"><span>Last name <i aria-hidden="true">*</i></span><input type="text" name="last_name" required autocomplete="family-name"></label>
+      </div>
+      <label class="ct-field"><span>Email address <i aria-hidden="true">*</i></span><input type="email" name="email" required autocomplete="email"></label>
+      <label class="ct-field"><span>I&rsquo;m reaching out about <i aria-hidden="true">*</i></span>
+        <select name="reaching_out_about" required>
+          <option value="" disabled selected>Please choose</option>
+          <option>Private session (One-on-one)</option>
+          <option>Podcast</option>
+          <option>Costa Rica event</option>
+          <option>Interview</option>
+          <option>Brand collaboration</option>
+          <option>General inquiry</option>
+        </select>
+      </label>
+      <label class="ct-field"><span>Your message</span><textarea name="message" rows="4"></textarea></label>
+      <input type="hidden" name="_subject" value="New message from lyssaranyx website">
+      <button class="pill solid ct-send" type="submit">Send message</button>
+      <p class="ct-status" id="ct-status" role="status" aria-live="polite"></p>
     </form>
   </div>
 </section>
 
-<section class="mission tex dark" id="mission" aria-labelledby="mission-h">
-  <img class="el" src="assets/img/f4e7217a33.webp" alt="" style="width:900px;left:50%;top:-260px;transform:translateX(-50%);opacity:.28">
-  <img class="el" src="assets/img/1e9756d4bf.webp" alt="" style="width:260px;left:0;bottom:0;transform:rotate(180deg);opacity:.5">
-  <img class="leaf" src="assets/img/b53f9c0675.webp" alt="" style="width:900px;left:-380px;top:-200px;opacity:.45;transform:scaleY(-1)">
-  <img class="leaf" src="assets/img/b53f9c0675.webp" alt="" style="width:900px;right:-380px;bottom:-260px;opacity:.4;transform:scaleX(-1)">
-  <div class="wrap">
-    <img src="assets/img/1a6f127793.svg" alt="Lyssara Nyx" style="width:min(280px,70vw);height:auto">
-    <span class="label">Mission</span>
-    <h2 id="mission-h">Heaven on earth</h2>
-    <blockquote>Leading a worldwide love affair, igniting consciousness, reconnecting women to their power, and anchoring heaven on earth.</blockquote>
-    <p class="bridge">The bridge between heaven and earth.</p>
-    <a class="pill" href="#join">Join the Journey</a>
-  </div>
-</section>
-
 <footer class="foot">
-  <div class="wrap">
-    <img src="assets/img/18be73e98e.svg" alt="Lyssara Nyx">
-    <nav aria-label="Footer"><a href="#method">The Method</a><a href="#app">The App</a><a href="#product">Product</a><a href="#books">Books</a><a href="#gatherings">Gatherings</a><a href="#connect">Connect</a></nav>
-    <span class="label">@lyssara_nyx</span>
-    <span class="label">Love <i class="star"></i> Light <i class="star"></i> Ignition</span>
+  <div class="wrap foot-wrap">
+    <div class="foot-brand"><img class="foot-logo" src="assets/img/18be73e98e.svg" alt="Lyssara Nyx"><p class="foot-script">May my fire light yours.</p></div>
+    <nav class="foot-links" aria-label="Footer">
+      <ul><li><a href="#method">The Method</a></li><li><a href="#app">The App</a></li><li><a href="#product">Product</a></li></ul>
+      <ul><li><a href="#books">Books</a></li><li><a href="#gatherings">Gatherings</a></li><li><a href="#connect">Connect</a></li></ul>
+    </nav>
+    <span class="foot-tag">Love <i class="star"></i> Light <i class="star"></i> Ignition</span>
+    <div class="foot-social">
+      <a href="https://www.instagram.com/lyssaranyx/" target="_blank" rel="noopener" aria-label="Lyssara Nyx on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></a>
+      <a href="https://www.threads.com/@lyssaranyx" target="_blank" rel="noopener" aria-label="Lyssara Nyx on Threads"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z"/></svg></a>
+      <a href="https://www.tiktok.com/@lyssara_nyx" target="_blank" rel="noopener" aria-label="Lyssara Nyx on TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+    </div>
+    <div class="foot-base"><span>&copy; <span id="yr">2026</span> Lyssara Nyx. All rights reserved.</span><span>Founder of Arlene Cycle Support</span></div>
   </div>
 </footer>
 
-
 <script>
 const form=document.getElementById('join');
-form.addEventListener('submit',e=>{e.preventDefault();document.getElementById('join-row').hidden=true;document.getElementById('join-done').hidden=false;});
+form.addEventListener('submit',async e=>{e.preventDefault();const st=document.getElementById('ct-status'),btn=form.querySelector('.ct-send');btn.disabled=true;st.textContent='Sending\u2026';
+  try{const r=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
+    if(r.ok){form.reset();form.classList.add('sent');st.textContent='Thank you. Your message is on its way, and Lyssara\u2019s team will be in touch.';}
+    else{st.textContent='Something went wrong. Please try again in a moment.';}
+  }catch(err){st.textContent='Your message could not be sent from this preview. It will send from the live site.';}
+  btn.disabled=false;});
 </script>
 
 <script>
@@ -951,6 +1177,29 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')set(false);});})();
 </script>
 <script>
 (()=>{const i=document.querySelector('.h-img');if(i)document.documentElement.style.setProperty('--hero-src','url("'+(i.currentSrc||i.src)+'")');})();
+(()=>{const i=document.querySelector('.ap-bg');if(i)document.documentElement.style.setProperty('--ap-src','url("'+(i.currentSrc||i.src)+'")');})();
+</script>
+<script>
+(()=>{const s=document.querySelector('.ap');if(!s)return;
+const lc=s.querySelector('.ap-app .ap-copy'),rc=s.querySelector('.ap-product .ap-copy'),ia=s.querySelector('.ap-icons-a'),ib=s.querySelector('.ap-icons-b');
+const AR=2182/1225, PH={top:.335,left:.19,right:.385,bottom:.89}, BX={top:.49,left:.57};
+function fit(){
+  if(innerWidth<=1100){s.style.height='';return;}
+  const W=s.clientWidth, top=s.getBoundingClientRect().top;
+  const lb=lc.getBoundingClientRect().bottom-top+16, rb=rc.getBoundingClientRect().bottom-top+16;
+  const bgH=W/AR;
+  let H=Math.max(bgH, lb+(1-PH.top)*bgH, rb+(1-BX.top)*bgH);
+  s.style.height=Math.ceil(H)+'px';
+  const st=H-bgH;
+  const edge=lc.getBoundingClientRect().left-s.getBoundingClientRect().left;
+  s.style.setProperty('--edge',edge+'px');
+  ia.style.top=(lb+18)+'px';
+  ib.style.left=(PH.right*W+Math.max(14,W*.012))+'px';
+  ia.style.left=Math.min(edge, PH.left*W - ia.offsetWidth - 8)+'px';
+  const bl=PH.right*W+Math.max(14,W*.012); ib.style.maxWidth=(W*.5-14-bl)+'px';
+  ib.style.top=(st+bgH*.6)+'px';
+}
+addEventListener('resize',fit);document.fonts&&document.fonts.ready.then(fit);addEventListener('load',fit);fit();})();
 </script>
 
 </body>
