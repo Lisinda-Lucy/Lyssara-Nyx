@@ -962,6 +962,136 @@ section[id]{scroll-margin-top:80px}
   width:max(100vw,min(177.78vh,219vw))}
 .intro.intro-out{transform:translateY(-100%);opacity:0}
 @media (prefers-reduced-motion:reduce){.intro-on .intro{transition:opacity .6s ease}.intro.intro-out{transform:none}}
+/* Method card copy: bolder and a touch bigger so it reads over the photos */
+.m3-text p{font-weight:400;font-size:clamp(17px,1.6vw,26px);line-height:1.38;text-shadow:0 1px 8px rgba(107,2,2,.6)}
+@media (max-width:760px){.m3-text p{font-size:19px}}
+/* ---------- App + Product on phones/tablets: one continuous scene on her background ----------
+   #fdf6ea is the haze colour sampled from the top of her background (it is near-uniform there),
+   so the copy sits on her own haze and each crop of the background melts into it. */
+@media (max-width:1100px){
+  .ap{display:flex!important;flex-direction:column;background:#fdf6ea!important;padding-top:clamp(40px,8vw,64px)}
+  .ap-grid,.ap-app{display:contents!important}
+  .ap-product{display:block!important;background:none!important;padding:0!important}
+  .ap-col{background:none!important}
+  .ap-copy{padding:0 var(--gutter)!important;min-width:0}
+  .ap-copy h2,.ap-product .ap-copy h2{white-space:normal!important;max-width:none!important;overflow-wrap:break-word}
+  .ap-body{max-width:none!important}
+  .ap-app .ap-copy{order:1}
+  .ap .ap-icons{order:2;background:none!important;display:grid!important;grid-template-columns:1fr 1fr;column-gap:16px;row-gap:18px;padding:0 var(--gutter)!important;margin:0!important}
+  .ap .ap-icons-a{padding-top:30px!important}
+  .ap .ap-icons-b{order:3;padding-top:18px!important;padding-bottom:0!important}
+  .ap .ap-icons img{filter:none}
+  .ap-app .ap-scene{order:4}
+  .ap-product{order:5;padding-top:8px!important}
+  .ap-scene{display:block!important;margin:0!important;border-radius:0;background-image:var(--ap-src)!important;background-repeat:no-repeat!important;
+    -webkit-mask:linear-gradient(180deg,transparent 0,#000 24%,#000 86%,transparent 100%);mask:linear-gradient(180deg,transparent 0,#000 24%,#000 86%,transparent 100%)}
+  .ap-scene-app{aspect-ratio:1/.845!important;background-size:215% auto!important;background-position:10.3% 83%!important}
+  .ap-scene-product{aspect-ratio:1/.6!important;background-size:174% auto!important;background-position:100% 92.5%!important;margin-top:-4vw!important}
+  .ap-product .ap-copy{position:relative;z-index:1}
+}
+@media (max-width:760px){
+  .ap-scene-app{aspect-ratio:1/1.425!important;background-size:338.5% auto!important;background-position:19.8% 80%!important;margin-top:-6vw!important}
+  .ap-scene-product{aspect-ratio:1/.864!important;background-size:261% auto!important;background-position:89.7% 92.7%!important;margin-top:-10vw!important}
+  .ap .ap-icons li{gap:10px!important}
+  .ap .ap-icons img{height:38px!important}
+  .ap .ap-icons span{font-size:13px!important;white-space:normal!important}
+}
+/* ---------- Books on phones: copy on her own glow, books scene melts in below ---------- */
+@media (max-width:760px){
+  .bk{display:flex!important;flex-direction:column;background:#fcedd1!important;min-height:0!important}
+  .bk::after{display:none!important}
+  .bk-wrap{order:1;background:none!important;padding-block:52px 0!important}
+  .bk-bg{order:2;position:relative!important;inset:auto!important;width:100%;height:auto!important;aspect-ratio:1/1.02!important;object-position:71% 100%!important;margin-top:-28px;
+    -webkit-mask:linear-gradient(180deg,transparent 0,#000 30%);mask:linear-gradient(180deg,transparent 0,#000 30%)}
+  .bk-note{position:relative;z-index:1;font-size:32px!important}
+}
+/* ---------- Gatherings on phones: her palm-shadow texture kept visible, tighter rhythm ---------- */
+@media (max-width:980px){
+  .gt{background:#feebdb!important}
+  .gt::before,.gt::after{content:"";position:absolute;left:0;right:0;height:min(160vw,1400px);z-index:0;pointer-events:none;background:url(assets/img/c0463c2c26.jpg) no-repeat;background-size:260% auto}
+  .gt::before{top:0;background-position:0 0;-webkit-mask:linear-gradient(180deg,#000 55%,transparent);mask:linear-gradient(180deg,#000 55%,transparent)}
+  .gt::after{bottom:0;background-position:100% 100%;-webkit-mask:linear-gradient(0deg,#000 55%,transparent);mask:linear-gradient(0deg,#000 55%,transparent)}
+  .gt-wrap{position:relative;z-index:1;padding-block:52px 60px!important}
+  .gt-top{display:flex!important;flex-direction:column;gap:14px}
+  .gt-copy{display:contents!important}
+  .gt-copy .m3-label{order:1}
+  .gt-copy h2{order:2}
+  .gt-figure{order:3;margin:6px 0 0!important}
+  .gt-figure img{width:min(78%,420px)!important;margin:0 auto!important}
+  .gt-copy .gt-body{order:4}
+  .gt-invite{order:5;margin:8px 0 0!important;justify-self:auto;align-self:center;font-size:clamp(30px,8.4vw,44px)!important}
+  .gt-invite .gt-inv2{margin-left:2.4em!important}
+  .gt-cols{gap:22px!important;margin-top:18px}
+  .gt-cols h3{font-size:24px!important}
+  .gt-cols p{font-size:17px!important;max-width:30ch}
+  .gt-sep-h{width:min(170px,50%)!important}
+  .gt-cta{margin-top:10px}
+}
+/* App/Product: keep the whole box in frame on phones */
+@media (max-width:760px){.ap-scene-product{background-size:236% auto!important;aspect-ratio:1/.8!important;background-position:96% 93%!important}}
+@media (max-width:980px){
+  .gt-copy h2{font-size:var(--t-h2)!important;line-height:.92!important}
+  .gt-figure img{-webkit-mask:linear-gradient(180deg,#000 80%,transparent);mask:linear-gradient(180deg,#000 80%,transparent)}
+}
+@media (min-width:1101px){
+  .ap-stage{bottom:var(--apcrop,0)!important}
+  .ap-grid{padding-top:clamp(40px,3.6vw,60px)!important}
+}
+.m3-quote{font-style:italic}
+/* App on phones/tablets: copy, smaller phone, icons, then the button; icons on a fixed grid so labels line up */
+@media (max-width:1100px){
+  .ap-app .ap-copy{display:contents!important}
+  .ap-app .ap-copy > *{margin-inline:var(--gutter)!important}
+  .ap-app .ap-copy .m3-label{order:1}
+  .ap-app .ap-copy h2{order:2;margin-top:12px!important}
+  .ap-app .ap-copy .ap-body{order:3;margin-top:14px!important}
+  .ap-app .ap-scene{order:4;margin-top:4px!important}
+  .ap .ap-icons-a{order:5;padding-top:0!important;margin-top:-4px!important}
+  .ap .ap-icons-b{order:6}
+  .ap-app .ap-copy .pill{order:7;align-self:flex-start;margin-top:26px!important}
+  .ap-product{order:8;padding-top:44px!important}
+  .ap .ap-icons li{display:grid!important;grid-template-columns:44px minmax(0,1fr);align-items:center;column-gap:10px!important}
+  .ap .ap-icons img{width:44px!important;height:40px!important;object-fit:contain;justify-self:center}
+  .ap-scene-app{aspect-ratio:1/.7!important;background-size:160% auto!important;background-position:8% 78%!important;
+    -webkit-mask:linear-gradient(180deg,transparent 0,#000 12%,#000 86%,transparent 100%)!important;mask:linear-gradient(180deg,transparent 0,#000 12%,#000 86%,transparent 100%)!important}
+}
+@media (max-width:760px){
+  .ap-scene-app{aspect-ratio:1/.994!important;background-size:246% auto!important;background-position:14.2% 78.5%!important;margin-top:4px!important}
+  .ap .ap-icons span{font-size:13px!important}
+}
+@media (max-width:1100px){
+  .ap .ap-icons{align-self:stretch!important}
+  .ap-scene-app{aspect-ratio:1/.808!important;background-size:200% auto!important;background-position:7.5% 71%!important}
+}
+@media (max-width:760px){
+  .ap-scene-app{aspect-ratio:1/.994!important;background-size:246% auto!important;background-position:14.2% 78.5%!important}
+}
+/* Books on phones: her background behind the heading too (the sunlit glow left of the books), books scene below */
+@media (max-width:760px){
+  .bk{background:#fcedd1 url(assets/img/f0044c90a5.jpg) 14% 0/310% auto no-repeat!important}
+  .bk::after{display:block!important;inset:0 0 auto 0!important;height:440px;background:linear-gradient(180deg,rgba(252,237,209,.62) 0,rgba(252,237,209,.5) 70%,rgba(252,237,209,0) 100%)!important}
+  .bk-bg{-webkit-mask:linear-gradient(180deg,transparent 0,#000 13%)!important;mask:linear-gradient(180deg,transparent 0,#000 13%)!important;aspect-ratio:1/1.12!important;object-position:71% 100%!important}
+}
+@media (max-width:1100px){
+  .ap-app .ap-copy .pill{order:3!important;margin-top:22px!important}
+  .ap-app .ap-copy .ap-body{order:3}
+  .ap-app .ap-copy .pill{order:4!important}
+  .ap-app .ap-scene{order:5!important}
+  .ap .ap-icons-a{order:6!important}
+  .ap .ap-icons-b{order:7!important;padding-bottom:6px!important}
+}
+/* Method vow: same size as the intro copy */
+.m3-quote{font-size:var(--t-body)!important;line-height:1.45}
+/* App + Product on phones/tablets: her background (palm-shadowed haze) behind the headings and copy */
+@media (max-width:1100px){
+  .ap::before,.ap-product::before{content:"";position:absolute;left:0;right:0;top:0;height:min(120vw,560px);z-index:-1;pointer-events:none;
+    background:url(assets/img/eafea37945.jpg) no-repeat;background-size:450% auto;
+    -webkit-mask:linear-gradient(180deg,#000 60%,transparent);mask:linear-gradient(180deg,#000 60%,transparent)}
+  .ap::before{background-position:0 0}
+  .ap-product{position:relative;isolation:isolate}
+  .ap-product::before{background-position:100% 0;-webkit-mask:linear-gradient(180deg,transparent 0,#000 18%,#000 60%,transparent);mask:linear-gradient(180deg,transparent 0,#000 18%,#000 60%,transparent)}
+}
+.m3-quote{margin-top:calc(-1 * clamp(18px,2.2vw,32px))!important}
 </style>
 <style>html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
@@ -1042,6 +1172,7 @@ section[id]{scroll-margin-top:80px}
       <h2 id="method-h">Honor your cyclical nature</h2>
       <p class="m3-intro">You are designed to move through phases. To shed, to become, to renew. There is power in darkness.<br>This is where your intuition speaks.</p>
     </div>
+    <p class="m3-quote">May my fire light yours. May this be the greatest love affair the world has ever seen.</p>
     <ol class="m3-cards">
       <li class="m3-card">
         <img class="m3-photo" src="assets/img/4517b1cf80.jpg" alt="Lyssara Nyx in profile, eyes closed, raising a white snake in a sunlit jungle" style="object-position:50% 30%">
@@ -1059,7 +1190,6 @@ section[id]{scroll-margin-top:80px}
         <img class="m3-icon" src="assets/img/f2f7485553.png" alt="">
       </li>
     </ol>
-    <p class="m3-quote">May my fire light yours. May this be the greatest love affair the world has ever seen.</p>
   </div>
 </section>
 
@@ -1215,18 +1345,22 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')set(false);});})();
 <script>
 (()=>{const s=document.querySelector('.ap');if(!s)return;
 const lc=s.querySelector('.ap-app .ap-copy'),rc=s.querySelector('.ap-product .ap-copy'),ia=s.querySelector('.ap-icons-a'),ib=s.querySelector('.ap-icons-b');
-const AR=2182/1225, PH={top:.335,left:.19,right:.385,bottom:.89}, BX={top:.49,left:.57};
+const AR=2182/1225, PH={top:.335,left:.19,right:.385,bottom:.89}, BX={top:.49,left:.57}, VIS=.94; /* VIS: show the background down to 94%, trimming the plinth base */
 function fit(){
-  if(innerWidth<=1100){s.style.height='';return;}
+  if(innerWidth<=1100){s.style.height='';s.style.removeProperty('--apcrop');[ia,ib].forEach(u=>{u.style.top=u.style.left=u.style.maxWidth='';});return;}
   const W=s.clientWidth, top=s.getBoundingClientRect().top;
-  const lb=lc.getBoundingClientRect().bottom-top+16, rb=rc.getBoundingClientRect().bottom-top+16;
+  const lbBtn=lc.getBoundingClientRect().bottom-top;
+  const lbody=lc.querySelector('.ap-body'), lb=(lbody?lbody.getBoundingClientRect().bottom-top:lbBtn)+24, rb=rc.getBoundingClientRect().bottom-top+10;
+  /* the phone sits right of the button, so it only has to clear the body copy */
   const bgH=W/AR;
-  let H=Math.max(bgH, lb+(1-PH.top)*bgH, rb+(1-BX.top)*bgH);
+  let H=Math.max(VIS*bgH, lb+(VIS-PH.top)*bgH, rb+(VIS-BX.top)*bgH);
   s.style.height=Math.ceil(H)+'px';
-  const st=H-bgH;
+  const UP=.026*bgH; /* lift the scene slightly without changing the section height */
+  s.style.setProperty('--apcrop',(-(1-VIS)*bgH+UP)+'px');
+  const st=H-VIS*bgH-UP;
   const edge=lc.getBoundingClientRect().left-s.getBoundingClientRect().left;
   s.style.setProperty('--edge',edge+'px');
-  ia.style.top=(lb+18)+'px';
+  ia.style.top=(lbBtn+18)+'px';
   ib.style.left=(PH.right*W+Math.max(14,W*.012))+'px';
   ia.style.left=Math.min(edge, PH.left*W - ia.offsetWidth - 8)+'px';
   const bl=PH.right*W+Math.max(14,W*.012); ib.style.maxWidth=(W*.5-14-bl)+'px';
